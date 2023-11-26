@@ -58,5 +58,7 @@ require("lazy").setup({
             "ibhagwan/fzf-lua",              -- optional
         },
         config = true
-    }
+    },
+    {'ThePrimeagen/vim-be-good'},
+    {'tpope/vim-surround'},
 })
