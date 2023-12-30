@@ -61,4 +61,5 @@ require("lazy").setup({
     },
     {'ThePrimeagen/vim-be-good'},
     {'tpope/vim-surround'},
+    {'prichrd/netrw.nvim'}
 })
