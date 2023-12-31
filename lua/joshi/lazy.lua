@@ -62,4 +62,7 @@ require("lazy").setup({
     {'ThePrimeagen/vim-be-good'},
     {'tpope/vim-surround'},
     {'prichrd/netrw.nvim'}
+    {'tpope/vim-commentary'},
+    {'justinmk/vim-sneak'},
+    {'vim-test/vim-test'},
 })
