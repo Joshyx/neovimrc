@@ -46,4 +46,4 @@ require("nvim-tree").setup({
     }
 })
 
-vim.keymap.set("n", "<leader>sf", vim.cmd.NvimTreeFindFile)
+vim.keymap.set("n", "<leader>st", vim.cmd.NvimTreeFindFile, { desc = "[S]how [T]ree" })

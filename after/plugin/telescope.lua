@@ -1,16 +1,13 @@
 local builtin = require('telescope.builtin')
-require('telescope').load_extension('tmuxinator')
 
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
+require("telescope").load_extension("refactoring")
+
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [F]iles" })
+vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "Search [Git] [F]iles" })
+vim.keymap.set('n', '<leader>ss', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end, {})
-vim.keymap.set('n', '<leader>pb', builtin.buffers)
-vim.keymap.set('n', '<leader>pc', builtin.colorscheme)
-vim.keymap.set('n', 'gd', builtin.lsp_definitions)
-vim.keymap.set('n', '<leader>pd', builtin.diagnostics)
-
-vim.keymap.set('n', '<leader>pp', function ()
-    require('telescope').extensions.tmuxinator.projects{}
-end)
+end, { desc = "[S]earch for [S]tring" })
+vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = "[S]earch [B]uffers" })
+vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = "[G]o to [D]efinition(s)" })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = "[S]how [D]iagnostics" })

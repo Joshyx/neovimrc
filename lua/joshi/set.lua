@@ -1,5 +1,8 @@
 vim.opt.mouse = ""
 
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
