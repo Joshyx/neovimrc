@@ -13,56 +13,47 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        dependencies = { 'nvim-lua/plenary.nvim', 'danielpieper/telescope-tmuxinator.nvim'}
     },
-    {'rose-pine/neovim', name = 'rose-pine'},
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    {'ThePrimeagen/harpoon'},
-    {'mbbill/undotree'},
-    {'tpope/vim-fugitive'},
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'L3MON4D3/LuaSnip'},
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-    {'windwp/nvim-autopairs', opts = {}, event = 'InsertEnter'},
-    {'nvim-lualine/lualine.nvim'},
-    {'nvim-tree/nvim-web-devicons'},
-    {'nvim-tree/nvim-tree.lua'},
-    {
-        "NvChad/nvterm",
-        config = function ()
-            require("nvterm").setup()
-        end,
-    },
+    { 'rose-pine/neovim',                 name = 'rose-pine' },
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { 'ThePrimeagen/harpoon' },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'L3MON4D3/LuaSnip' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'windwp/nvim-autopairs',            opts = {},          event = 'InsertEnter' },
+    { 'nvim-lualine/lualine.nvim' },
+    { 'nvim-tree/nvim-web-devicons' },
+    { 'nvim-tree/nvim-tree.lua' },
     {
         "folke/trouble.nvim",
-        config = function ()
+        config = function()
             require("trouble").setup()
         end
     },
     {
         "lewis6991/gitsigns.nvim",
-        config = function ()
+        config = function()
             require("gitsigns").setup()
         end
     },
     {
         "NeogitOrg/neogit",
         dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional
-            "ibhagwan/fzf-lua",              -- optional
+            "nvim-lua/plenary.nvim",  -- required
+            "sindrets/diffview.nvim", -- optional
+            "ibhagwan/fzf-lua",       -- optional
         },
         config = true
     },
-    {'ThePrimeagen/vim-be-good'},
-    {'tpope/vim-surround'},
-    {'prichrd/netrw.nvim'},
-    {'tpope/vim-commentary'},
-    {'justinmk/vim-sneak'},
-    {'vim-test/vim-test'},
+    { 'tpope/vim-surround' },
+    { 'tpope/vim-commentary' },
+    { 'justinmk/vim-sneak' },
+    { 'romgrk/barbar.nvim' },
 })
