@@ -20,3 +20,7 @@ vim.keymap.set("v", "<C-C>", '"+y', { desc = "Copy to System Clipboard" })
 vim.keymap.set("n", "<leader>fx", ':silent !chmod +x %<CR>', { desc = "Make [F]ile e[x]ecutable" })
 vim.keymap.set("n", "<leader>fl", ':e!<CR>', { desc = "[L]oad [F]ile from disk" })
 vim.keymap.set("n", "<leader>fs", ':s<CR>', { desc = "[S]ave [F]ile" })
+
+-- Buffers
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buffer" })
