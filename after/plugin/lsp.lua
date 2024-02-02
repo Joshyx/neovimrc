@@ -15,8 +15,8 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
 
     vim.keymap.set('n', 'gd', require("telescope.builtin").lsp_definitions, { desc = "[G]o to [D]efinition(s)" })
-    vim.keymap.set('n', ']d', vim.diagnostics.goto_next, { desc = "Next [D]iagnostic" })
-    vim.keymap.set('n', '[d', vim.diagnostics.goto_prev, { desc = "Previous [D]iagnostic" })
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next [D]iagnostic" })
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous [D]iagnostic" })
 
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Signature [H]elp" })
 
