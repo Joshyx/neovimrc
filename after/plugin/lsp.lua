@@ -7,14 +7,23 @@ lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
-end)
 
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Show [C]ode [A]ctions" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename symbol" })
-vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
-vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
-vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Signature [H]elp" })
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Show [C]ode [A]ctions" })
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename symbol" })
+    vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
+    vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
+    vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
+
+    vim.keymap.set('n', 'gd', require("telescope.builtin").lsp_definitions, { desc = "[G]o to [D]efinition(s)" })
+    vim.keymap.set('n', ']d', vim.diagnostics.goto_next, { desc = "Next [D]iagnostic" })
+    vim.keymap.set('n', '[d', vim.diagnostics.goto_prev, { desc = "Previous [D]iagnostic" })
+
+    vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Signature [H]elp" })
+
+    require('which-key').register {
+        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+    }
+end)
 
 require('neodev').setup()
 

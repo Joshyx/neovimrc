@@ -24,3 +24,6 @@ vim.keymap.set("n", "<leader>fs", ':s<CR>', { desc = "[S]ave [F]ile" })
 -- Buffers
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buffer" })
+
+-- Editing
+vim.keymap.set("n", "c=", "$dT=xa ", { desc = "Change right of equals sign" })
