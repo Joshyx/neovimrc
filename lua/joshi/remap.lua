@@ -27,3 +27,5 @@ vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buf
 
 -- Editing
 vim.keymap.set("n", "c=", "$dT=xa ", { desc = "Change right of equals sign" })
+vim.keymap.set("n", "c:", "$dT:xa ", { desc = "Change right of colon" })
+vim.keymap.set("n", "c,", "dT,ct, ", { desc = "Change between commas" })
