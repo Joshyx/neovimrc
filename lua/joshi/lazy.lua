@@ -15,7 +15,7 @@ require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim', "Snikimonkd/telescope-git-conflicts.nvim" }
     },
     { 'rose-pine/neovim',      name = 'rose-pine' },
     { "EdenEast/nightfox.nvim" },
