@@ -17,15 +17,17 @@ require("lazy").setup({
         tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { 'rose-pine/neovim',       name = 'rose-pine' },
+    { 'rose-pine/neovim',      name = 'rose-pine' },
+    { "EdenEast/nightfox.nvim" },
+    { "catppuccin/nvim",       name = "catppuccin" },
     {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
+            'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
         build = ":TSUpdate"
     },
-    { 'ThePrimeagen/harpoon' },
     { 'folke/which-key.nvim' },
     { 'tpope/vim-fugitive' },
     { 'lewis6991/gitsigns.nvim' },
@@ -36,8 +38,6 @@ require("lazy").setup({
             'williamboman/mason-lspconfig.nvim',
 
             { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-
-            { 'j-hui/fidget.nvim',         opts = {} },
 
             'folke/neodev.nvim',
 
@@ -66,14 +66,6 @@ require("lazy").setup({
             require("trouble").setup()
         end
     },
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "sindrets/diffview.nvim", -- optional
-            "ibhagwan/fzf-lua",       -- optional
-        },
-        config = true
-    },
     { 'tpope/vim-surround' },
     {
         'numToStr/Comment.nvim',
@@ -81,8 +73,19 @@ require("lazy").setup({
             require("Comment").setup()
         end
     },
-    { 'justinmk/vim-sneak' },
     { 'romgrk/barbar.nvim' },
     { 'eandrju/cellular-automaton.nvim' },
     { 'ThePrimeagen/refactoring.nvim', },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    }
 })
