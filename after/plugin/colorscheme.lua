@@ -4,7 +4,7 @@ require('rose-pine').setup({
     --- @usage 'main'|'moon'|'dawn'
     dark_variant = 'main',
 
-    enable = {
+    styles = {
         transparency = true,
     },
 

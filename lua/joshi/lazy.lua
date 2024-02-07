@@ -60,12 +60,6 @@ require("lazy").setup({
     { 'nvim-lualine/lualine.nvim' },
     { 'nvim-tree/nvim-web-devicons' },
     { 'nvim-tree/nvim-tree.lua' },
-    {
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup()
-        end
-    },
     { 'tpope/vim-surround' },
     {
         'numToStr/Comment.nvim',
