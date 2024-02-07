@@ -1,3 +1,13 @@
+local actions = require("telescope.actions")
+require("telescope").setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
+    }
+}
 local builtin = require('telescope.builtin')
 
 require("telescope").load_extension("refactoring")
