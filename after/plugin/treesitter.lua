@@ -71,4 +71,7 @@ require 'nvim-treesitter.configs'.setup {
             node_decremental = "<BS>",
         },
     },
+    autotag = {
+        enable = true,
+    }
 }

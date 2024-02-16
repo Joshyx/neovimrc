@@ -22,6 +22,7 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
+            'windwp/nvim-ts-autotag'
         },
         build = ":TSUpdate"
     },
@@ -70,5 +71,6 @@ require("lazy").setup({
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
-    }
+    },
+    { "dstein64/vim-startuptime" }
 })
