@@ -18,7 +18,7 @@ require("noice").setup {
             search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
             filter = { pattern = "^:%s*!", icon = "$", lang = "bash", kind = "shell" },
             lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-            help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+            help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
             input = {}, -- Used by input()
             -- lua = false, -- to disable a format, set to `false`
         },
@@ -120,10 +120,10 @@ require("noice").setup {
         },
         hover = {
             enabled = true,
-            silent = false, -- set to true to not show a message if hover is not available
-            view = nil,     -- when nil, use defaults from documentation
+            silent = true, -- set to true to not show a message if hover is not available
+            view = nil,    -- when nil, use defaults from documentation
             ---@type NoiceViewOptions
-            opts = {},      -- merged with defaults from documentation
+            opts = {},     -- merged with defaults from documentation
         },
         signature = {
             enabled = true,
@@ -186,14 +186,20 @@ require("noice").setup {
         bottom_search = false,         -- use a classic bottom cmdline for search
         command_palette = false,       -- position the cmdline and popupmenu together
         long_message_to_split = false, -- long messages will be sent to a split
+        cmdline_output_to_split = false,
         inc_rename = false,            -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false,        -- add a border to hover docs and signature help
+        lsp_doc_border = true,         -- add a border to hover docs and signature help
     },
     throttle = 1000 / 30,              -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
     ---@type NoiceConfigViews
     views = {}, ---@see section on views
     ---@type NoiceRouteConfig[]
-    routes = {}, --- @see section on routes
+    routes = {
+        {
+            view = "popup",
+            filter = { min_height = 10, cmdline = "^:!" },
+        },
+    },
     ---@type table<string, NoiceFilter>
     status = {}, --- @see section on statusline components
     ---@type NoiceFormatOptions

@@ -17,13 +17,10 @@ require("lazy").setup({
         tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim', "Snikimonkd/telescope-git-conflicts.nvim" }
     },
-    { 'rose-pine/neovim',      name = 'rose-pine' },
-    { "EdenEast/nightfox.nvim" },
-    { "catppuccin/nvim",       name = "catppuccin" },
+    { 'rose-pine/neovim',       name = 'rose-pine' },
     {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
-            'nvim-treesitter/nvim-treesitter-context',
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
         build = ":TSUpdate"
@@ -56,19 +53,11 @@ require("lazy").setup({
             'saadparwaiz1/cmp_luasnip',
         }
     },
-    { 'windwp/nvim-autopairs',      opts = {}, event = 'InsertEnter' },
+    { 'windwp/nvim-autopairs',         opts = {}, event = 'InsertEnter' },
     { 'nvim-lualine/lualine.nvim' },
     { 'nvim-tree/nvim-web-devicons' },
     { 'nvim-tree/nvim-tree.lua' },
-    { 'tpope/vim-surround' },
-    {
-        'numToStr/Comment.nvim',
-        config = function()
-            require("Comment").setup()
-        end
-    },
     { 'romgrk/barbar.nvim' },
-    { 'eandrju/cellular-automaton.nvim' },
     { 'ThePrimeagen/refactoring.nvim', },
     {
         "folke/noice.nvim",
