@@ -72,5 +72,4 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         }
     },
-    { "dstein64/vim-startuptime" }
 })
