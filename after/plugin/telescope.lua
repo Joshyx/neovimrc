@@ -15,7 +15,7 @@ require("telescope").load_extension("notify")
 require("telescope").load_extension("conflicts")
 
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = "Search [Git] [F]iles" })
+vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "Search [Git] [F]iles" })
 vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = "[S]earch for [S]tring" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = "[S]earch [B]uffers" })
 vim.keymap.set('n', '<leader>sc', function() builtin.colorscheme({ enable_preview = true }) end,
