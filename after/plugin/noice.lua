@@ -197,7 +197,7 @@ require("noice").setup {
     routes = {
         {
             view = "popup",
-            filter = { min_height = 10, cmdline = "^:!" },
+            filter = { min_height = 4, cmdline = "^:!" },
         },
     },
     ---@type table<string, NoiceFilter>
