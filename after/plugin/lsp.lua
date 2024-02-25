@@ -13,6 +13,12 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
     vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
     vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
+    vim.keymap.set("n", "<leader>ci", function()
+        vim.lsp.buf.code_action({
+            context = { only = { "source.organizeImports" } },
+            apply = true,
+        })
+    end, { desc = "[C]ode organize [i]mports" })
 
     vim.keymap.set('n', 'gd', require("telescope.builtin").lsp_definitions, { desc = "[G]o to [D]efinition(s)" })
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next [D]iagnostic" })
