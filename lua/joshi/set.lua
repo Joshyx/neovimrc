@@ -26,6 +26,14 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8

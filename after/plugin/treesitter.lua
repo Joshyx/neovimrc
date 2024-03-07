@@ -75,3 +75,23 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
     }
 }
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.kol = {
+    install_info = {
+        url = "~/programming/javascript/tree-sitter-kol", -- local path or git repo
+        files = { "src/parser.c" },                       -- note that some parsers also require src/scanner.c or src/scanner.cc
+        -- optional entries:
+        branch = "main",                                  -- default branch in case of git repo if different from master
+    },
+    filetype = "kol",                                     -- if filetype does not match the parser name
+}
+vim.treesitter.language.register('kol', 'kol')
+vim.filetype.add({
+    extension = {
+        kol = 'kol',
+    },
+    filename = {
+        ['.kol'] = 'kol',
+    },
+})

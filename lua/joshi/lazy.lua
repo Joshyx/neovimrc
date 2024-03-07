@@ -15,14 +15,15 @@ require("lazy").setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
-        dependencies = { 'nvim-lua/plenary.nvim', "Snikimonkd/telescope-git-conflicts.nvim" }
+        dependencies = { 'nvim-lua/plenary.nvim', "Snikimonkd/telescope-git-conflicts.nvim", "nvim-telescope/telescope-ui-select.nvim" }
     },
     { 'rose-pine/neovim',       name = 'rose-pine' },
     {
         "nvim-treesitter/nvim-treesitter",
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
-            'windwp/nvim-ts-autotag'
+            'windwp/nvim-ts-autotag',
+            'nvim-treesitter/playground'
         },
         build = ":TSUpdate"
     },
@@ -72,5 +73,6 @@ require("lazy").setup({
             "rcarriga/nvim-notify",
         }
     },
-    { 'github/copilot.vim' }
+    { 'github/copilot.vim' },
+    { "folke/todo-comments.nvim" }
 })

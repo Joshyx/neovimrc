@@ -12,6 +12,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename symbol" })
     vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
     vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
+    vim.keymap.set("n", "<leader>cq", vim.diagnostic.setloclist, { desc = "Show [Q]ickfixes" })
     vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
     vim.keymap.set("n", "<leader>ci", function()
         vim.lsp.buf.code_action({

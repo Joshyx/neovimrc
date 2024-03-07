@@ -6,13 +6,19 @@ require("telescope").setup {
                 ["<esc>"] = actions.close,
             },
         },
-    }
+    },
+    extensions = {
+        ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
+        },
+    },
 }
 local builtin = require('telescope.builtin')
 
 require("telescope").load_extension("refactoring")
 require("telescope").load_extension("notify")
 require("telescope").load_extension("conflicts")
+require("telescope").load_extension("ui-select")
 
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "Search [Git] [F]iles" })
