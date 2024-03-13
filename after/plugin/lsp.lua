@@ -57,6 +57,15 @@ require("mason-lspconfig").setup_handlers {
     end,
 }
 
+lsp_zero.new_client({
+    name = 'kolsp',
+    cmd = { '/home/joshi/programming/rust/kolsp/target/debug/kolsp' },
+    filetypes = { 'kol' },
+    root_dir = function()
+        return lsp_zero.dir.find_first({ '.kol' })
+    end
+})
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local luasnip = require 'luasnip'
