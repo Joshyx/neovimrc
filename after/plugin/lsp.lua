@@ -12,8 +12,6 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[R]ename symbol" })
     vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[F]ormat" })
     vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "[C]ode [D]iagnostics" })
-    vim.keymap.set("n", "<leader>cq", vim.diagnostic.setloclist, { desc = "Show [Q]ickfixes" })
-    vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over info" })
     vim.keymap.set("n", "<leader>ci", function()
         vim.lsp.buf.code_action({
             context = { only = { "source.organizeImports" } },
@@ -22,6 +20,9 @@ lsp_zero.on_attach(function(client, bufnr)
     end, { desc = "[C]ode organize [i]mports" })
 
     vim.keymap.set('n', 'gd', require("telescope.builtin").lsp_definitions, { desc = "[G]o to [D]efinition(s)" })
+    vim.keymap.set('n', 'gt', require("telescope.builtin").lsp_type_definitions, { desc = "[G]o to [T]ype(s)" })
+    vim.keymap.set('n', 'gr', require("telescope.builtin").lsp_references, { desc = "[S]earch [R]eferences" })
+    vim.keymap.set('n', 'gI', require("telescope.builtin").lsp_implementations, { desc = "[S]earch [I]mplementations" })
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next [D]iagnostic" })
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous [D]iagnostic" })
 
