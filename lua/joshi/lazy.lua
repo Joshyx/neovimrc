@@ -23,7 +23,6 @@ require("lazy").setup({
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
             'windwp/nvim-ts-autotag',
-            'nvim-treesitter/playground'
         },
         build = ":TSUpdate"
     },
@@ -74,5 +73,6 @@ require("lazy").setup({
         }
     },
     { 'github/copilot.vim' },
-    { "folke/todo-comments.nvim" }
+    { "folke/todo-comments.nvim" },
+    { 'numToStr/Comment.nvim' },
 })

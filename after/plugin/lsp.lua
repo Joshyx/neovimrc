@@ -1,5 +1,9 @@
 local lsp_zero = require('lsp-zero')
-require("lsp-format").setup {}
+require("lsp-format").setup {
+    rust = {
+        exclude = { "rust_analyzer" }
+    },
+}
 
 lsp_zero.on_attach(function(client, bufnr)
     require("lsp-format").on_attach(client, bufnr)
