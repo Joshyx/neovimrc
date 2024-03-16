@@ -73,9 +73,9 @@ lsp_zero.new_client({
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
+-- local luasnip = require 'luasnip'
+-- require('luasnip.loaders.from_vscode').lazy_load()
+-- luasnip.config.setup {}
 
 cmp.setup({
     sources = {
@@ -83,38 +83,20 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'lsp_zero' },
-        { name = 'luasnip' }
+        -- { name = 'luasnip' }
     },
     formatting = lsp_zero.cmp_format(),
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end
-    },
+    -- snippet = {
+    --     expand = function(args)
+    --         luasnip.lsp_expand(args.body)
+    --     end
+    -- },
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<enter>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { 'i', 's' }),
-        ['<C-y>'] = cmp.mapping(function(fallback)
+        ['<C-y>'] = cmp.mapping(function(_)
             vim.api.nvim_feedkeys(
                 vim.fn['copilot#Accept'](vim.api.nvim_replace_termcodes('<Tab>', true, true, true)), 'n', true)
         end)
