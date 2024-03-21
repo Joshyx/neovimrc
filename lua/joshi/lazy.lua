@@ -47,10 +47,10 @@ require("lazy").setup({
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
-            -- {
-            --     'L3MON4D3/LuaSnip',
-            --     dependencies = { "rafamadriz/friendly-snippets" }
-            -- },
+            {
+                'L3MON4D3/LuaSnip',
+                -- dependencies = { "rafamadriz/friendly-snippets" }
+            },
             -- 'saadparwaiz1/cmp_luasnip',
         }
     },
